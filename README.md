@@ -10,17 +10,33 @@ I could not ask for more.
 More docs on [turingjs]()
 All hard work by [alex young](http://alexyoung.org/) [@alex_young](https://twitter.com/alex_young)
 
+## Examples
 
 ```javascript
-	Plugins.register(Cat.prototype, 'miaou', {
+	// declare sample class
+	var Cat	= function(){}
+	Cat.prototype.miaou	= function(){
+		console.log('Miaou')
+		return this;
+	};
+	
+	// register the plugins
+	// - include informations for easier management (optional)
+	Plugins.register(Cat.prototype, 'ronron', {
 		name	: 'Cat',
 		version	: '1.0.0',
 		description : 'hungry cat',
 		author	: 'John doe <john.doe@example.com',
 		licenses: [ { type: 'MIT' } ],
-	
-		miaou	: function(){
-			console.log("miaou")
+
+		ronron	: function(){
+			console.log("RonRon")
+			return this;
 		}
 	});
+	
+	// instanciate MyClass
+	var cat	= new Cat;
+	// use the class with its plugins
+	cat.miaou().ronron().miaou();
 ```
