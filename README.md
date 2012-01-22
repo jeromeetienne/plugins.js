@@ -13,30 +13,30 @@ All hard work by [alex young](http://alexyoung.org/) [@alex_young](https://twitt
 ## Examples
 
 ```javascript
-	// declare sample class
-	var Cat	= function(){}
-	Cat.prototype.miaou	= function(){
-		console.log('Miaou')
-		return this;
-	};
-	
-	// register the plugins
-	// - include informations for easier management (optional)
-	Plugins.register(Cat.prototype, 'ronron', {
-		name	: 'Cat',
-		version	: '1.0.0',
-		description : 'hungry cat',
-		author	: 'John doe <john.doe@example.com',
-		licenses: [ { type: 'MIT' } ],
+// declare sample class
+var Cat	= function(){}
+Cat.prototype.miaou	= function(){
+	console.log('Miaou')
+	return this;
+};
 
-		ronron	: function(){
-			console.log("RonRon")
-			return this;
-		}
-	});
-	
-	// instanciate MyClass
-	var cat	= new Cat;
-	// use the class with its plugins
-	cat.miaou().ronron().miaou();
+// register the plugins
+// - include informations for easier management (optional)
+Plugins.register(Cat.prototype, 'ronron', {
+	name	: 'Cat',
+	version	: '1.0.0',
+	description : 'hungry cat',
+	author	: 'John doe <john.doe@example.com',
+	licenses: [ { type: 'MIT' } ],
+
+	ronron	: function(){
+		console.log("RonRon")
+		return this;
+	}
+});
+
+// instanciate MyClass
+var cat	= new Cat;
+// use the class with its plugins
+cat.miaou().ronron().miaou();
 ```
